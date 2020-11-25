@@ -5,14 +5,19 @@ CREATE TABLE `shop_user` (
   `create_time` timestamp NOT NULL COMMENT '加入时间',
  `update_time` timestamp NOT NULL COMMENT '修改时间',
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COMMENT='用户表'
+
+
 CREATE TABLE `shop_product` (
   `id` bigint NOT NULL AUTO_INCREMENT COMMENT '自增id',
   `name` varchar(50) NOT NULL COMMENT '商品名称',
   `price` int NOT NULL COMMENT '价格 分',
+  `stock` int NOT NULL COMMENT '库存',
  `state` int NOT NULL COMMENT '状态 0 下架 1 上架',
   `create_time` timestamp NOT NULL COMMENT '加入时间',
  `update_time` timestamp NOT NULL COMMENT '修改时间',
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COMMENT='商品表'
+
+
 CREATE TABLE `shop_order` (
   `id` bigint NOT NULL AUTO_INCREMENT COMMENT '自增id',
  `user_id` bigint NOT NULL AUTO_INCREMENT COMMENT '用户id',
@@ -21,6 +26,7 @@ CREATE TABLE `shop_order` (
   `create_time` timestamp NOT NULL COMMENT '加入时间',
  `update_time` timestamp NOT NULL COMMENT '修改时间',
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COMMENT='订单表'
+
 
 CREATE TABLE `shop_order_product` (
   `id` bigint NOT NULL AUTO_INCREMENT COMMENT '自增id',
